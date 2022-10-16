@@ -71,7 +71,7 @@ class ControlActorsAction(Action):
             self._direction = Point(0, constants.CELL_SIZE)
             _player = 2
 
-        for cycle in cast.get_actors("snakes"):
+        for cycle in cast.get_actors("cycles"):
             if(_player == 1 and cycle.get_color() == constants.RED):
                 cycle.turn_head(self._direction)
             elif(_player == 2 and cycle.get_color() == constants.GREEN):

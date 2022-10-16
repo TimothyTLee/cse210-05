@@ -27,7 +27,7 @@ The project files and folders are organized as follows:
 ```
 
 root (project root folder)
-+-- snake (source code for game)
++-- cycle (source code for game)
 +-- game (specific game classes)
 +-- **main**.py (entry point for program)
 +-- README.md (general info)
