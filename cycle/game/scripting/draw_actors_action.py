@@ -29,7 +29,7 @@ class DrawActorsAction(Action):
         score = cast.get_first_actor("scores")
         # food = cast.get_first_actor("foods")
 
-        for cycle in cast.get_actors("snakes"):
+        for cycle in cast.get_actors("cycles"):
             segments = cycle.get_segments()
             self._video_service.draw_actors(segments)
 

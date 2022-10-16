@@ -1,6 +1,6 @@
-# Snake
+# Cycle
 
-Snake is a clone of the classic game that we all used to play on our cellphones. You play this game
+Cycle is a clone of the classic game that we all used to play on our cellphones. You play this game
 on a simulated terminal, with a textual interface.
 
 ## Getting Started
@@ -15,7 +15,7 @@ python3 -m pip install raylib
 
 After you've installed the required libraries, open a terminal and browse to the project's root folder. Start the program by running the following command.```
 
-python3 snake
+python3 cycle
 
 ```
 You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the
@@ -41,5 +41,5 @@ root (project root folder)
 
 ## Authors
 ---
-* TODO: Add your name and email here
+* Timothy lee - timlee@byui.edu
 ```

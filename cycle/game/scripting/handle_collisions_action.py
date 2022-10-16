@@ -1,3 +1,4 @@
+from itertools import cycle
 import constants
 from game.casting.actor import Actor
 from game.scripting.action import Action
@@ -8,8 +9,8 @@ class HandleCollisionsAction(Action):
     """
     An update action that handles interactions between the actors.
 
-    The responsibility of HandleCollisionsAction is to handle the situation when the snake collides
-    with the food, or the snake collides with its segments, or the game is over.
+    The responsibility of HandleCollisionsAction is to handle the situation when one cycles collides
+    with the other cycle, or the cycle collides with its own segments, or the game is over.
 
     Attributes:
         _is_game_over (boolean): Whether or not the game is over.
@@ -60,13 +61,13 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        snake = cast.get_first_actor("snakes")
-        head = snake.get_segments()[0]
-        segments = snake.get_segments()[1:]
+        cycle = cast.get_first_actor("cycles")
+        head = cycle.get_segments()[0]
+        segments = cycle.get_segments()[1:]
 
-        snake2 = cast.get_last_actor("snakes")
-        head2 = snake2.get_segments()[0]
-        segments2 = snake2.get_segments()[1:]
+        cycle2 = cast.get_last_actor("cycles")
+        head2 = cycle2.get_segments()[0]
+        segments2 = cycle2.get_segments()[1:]
 
         self._head_collision(head, segments + segments2)
         self._head_collision(head2, segments2 + segments)
@@ -89,7 +90,7 @@ class HandleCollisionsAction(Action):
             message.set_position(position)
             cast.add_actor("messages", message)
 
-            for cycle in cast.get_actors("snakes"):
+            for cycle in cast.get_actors("cycles"):
                 segments = cycle.get_segments()
                 for segment in segments:
                     segment.set_color(constants.WHITE)
