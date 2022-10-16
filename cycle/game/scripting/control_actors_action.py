@@ -23,6 +23,7 @@ class ControlActorsAction(Action):
         self._direction = Point(constants.CELL_SIZE, 0)
 
     def execute(self, cast, script):
+        print(f"casting ${cast}")
         """Executes the control actors action.
 
         Args:
